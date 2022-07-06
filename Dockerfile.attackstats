@@ -11,6 +11,8 @@ RUN cargo build --release -p gather_data_rayon
 
 RUN mv /hqc/nist-release-2021-06-06/Optimized_Implementation/hqc-128/bin/attack-hybrid .
 
+RUN mkdir -p results results/last_lines
+
 WORKDIR /collect_attack_stats/results
 
 ENTRYPOINT ../run.sh
