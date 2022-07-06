@@ -1,3 +1,5 @@
 FROM hqc-attack
 
+RUN mkdir -p results/timings
+
 CMD ./collect_timings.sh

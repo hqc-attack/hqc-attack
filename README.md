@@ -55,6 +55,15 @@ You can adjust the number of iterations to use for each 100 ciphertexts [here](.
 #define ITERS 100000
 ```
 
+and [here](./hqc/nist-release-2021-06-06/Optimized_Implementation/hqc-128/src/collect_timings_messages.c):
+
+```
+#define N 1000000
+```
+
+try 10 and 1000 for quick testing.
+
+
 To get the best results:
 - set process niceness to -20 (using `nice -n-20 CMD`)
 - pin the process to a single core, and all other processes to a different one (using `taskset -p 0x1`, etc)
