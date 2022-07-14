@@ -23,11 +23,11 @@ median(df.time)
 filtered_df = @where(df, :time .< µ + 3. * σ); size(filtered_df)
 
 # ╔═╡ 09a0f57c-873b-11eb-26e0-eb6d89cae05c
-scatter(filtered_df.time[1:2000], xlab="Measurement No.", ylab="Cycles", legend=false)
+#scatter(filtered_df.time[1:2000], xlab="Measurement No.", ylab="Cycles", legend=false)
 
 # ╔═╡ e9f45926-8a34-11eb-2e78-2dce27fd3026
 grouped_filtered_df = filter(groupby(filtered_df, :sexp, sort=true)) do group
-	size(group)[1] > 100
+	size(group)[1] > 1
 end;
 
 # ╔═╡ 2267bd1e-875d-11eb-1d78-01286d4fa432
@@ -52,7 +52,7 @@ begin
 		legend=false,
 		xlim=lims)
 	vline!(p, medcycles)
-	#savefig(p, "cycles_probability_density_countermeasure_2.pdf")
+	savefig(p, "cycles_probability_density_countermeasure_2.pdf")
 	p
 end
 

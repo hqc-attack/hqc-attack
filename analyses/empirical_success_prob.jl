@@ -55,7 +55,7 @@ end
 mean(non_zero_wrong_bits.wrong_bits .< 20)
 
 # ╔═╡ 7cb8a96d-c0e6-48ff-88b5-084a95b1ff7b
-single_bit_wrong_count = countmap(non_zero_wrong_bits.wrong_bits)[1] + countmap(non_zero_wrong_bits.wrong_bits)[2]
+single_bit_wrong_count = get(countmap(non_zero_wrong_bits.wrong_bits), 1, 0)
 
 # ╔═╡ 51ce5271-10e7-4df8-b2e8-2b5fcde00867
 single_bit_wrong_rate = single_bit_wrong_count/length(non_zero_wrong_bits.wrong_bits)

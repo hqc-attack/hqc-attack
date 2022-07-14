@@ -81,10 +81,10 @@ begin
 end;
 
 # ╔═╡ d39cfe0e-0c89-11eb-05c8-53c9e5c22f51
-res[10,11]
+#res[10,11]
 
 # ╔═╡ 49d2612a-164b-11eb-3dcb-499292c4647b
-maximum(reshape(abs.((x->x.xbar).(filter(x -> pvalue(x) < α, res))), :))
+#maximum(reshape(abs.((x->x.xbar).(filter(x -> pvalue(x) < α, res))), :))
 
 # ╔═╡ c9ae81f2-157c-11eb-2d01-a5065ea803c4
 measurement_pair = vcat(timings[11], timings[10])
@@ -161,9 +161,9 @@ sum(pvalue.(res) .< α)/prod(size(res)) * 100
 
 # ╔═╡ 6d90a714-8680-11eb-37f1-3bb5d73dc6e0
 # median absolute cycle difference among those pairs where a difference was detected
-median(map(res[pvalue.(res) .< α]) do test
-				abs(test.xbar)
-				end)
+#median(map(res[pvalue.(res) .< α]) do test
+				#abs(test.xbar)
+				#end)
 
 # ╔═╡ ef950ddd-9d3a-4d8d-80e7-e604552cba11
 timings_density = density(filter_outliers(sub_timings(timings_df, "4"), 3.).time, normalize=:probability, labels=false)
