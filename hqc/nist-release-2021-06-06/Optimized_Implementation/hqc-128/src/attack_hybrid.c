@@ -209,13 +209,6 @@ int main(void)
         }
         if (all_majority)
         {
-          printf("Have majority for block %d with:\n", i);
-          for (size_t j = 0; j < PARAM_N2; ++j)
-          {
-            size_t pos = block_num * PARAM_N2 + j;
-            // If there is no majority for 1 or 0
-            printf("%ld vs %ld of %ld\n", results[pos], (counters[pos] - results[pos]), majority_min);
-          }
           skipped_blocks++;
           continue; // Skip block
         }
