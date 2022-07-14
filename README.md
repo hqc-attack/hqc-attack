@@ -78,10 +78,11 @@ make attackstats # takes ~0.75 hours on a Ryzen 9 5900X (multi-threaded)
 ```
 
 You can edit the number of times the attack is run in the [`Makefile`](./Makefile) under the `attackstats` target:
+(See at the very end of the line)
 
 
 ```sh
-docker run -it --rm -v "$(realpath results/attackstats):/collect_attack_stats/results" --entrypoint=../run.sh hqc-attackstats 1000 # edit this 1000
+docker run -it --rm -v "$(realpath results/attackstats):/collect_attack_stats/results" --entrypoint=../run.sh hqc-attackstats 1000 # edit this 1000 to e.g. 10
 ```
 
 ### Create figures:
